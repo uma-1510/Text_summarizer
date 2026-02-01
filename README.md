@@ -1,8 +1,8 @@
-📄 Text Summarizer (Seq2Seq + Attention)
+## Text Summarizer (Seq2Seq + Attention)
 
-A text summarization project using a Seq2Seq model with attention to generate paper titles from abstracts, trained on ArXiv metadata. This project demonstrates a strong understanding of NLP basics, preprocessing, tokenization, sequence modeling, and model deployment.
+A text summarization project using a Seq2Seq model with attention to generate paper titles from abstracts, trained on ArXiv metadata. This project demonstrates strong understanding of NLP basics, preprocessing, tokenization, sequence modeling, and model deployment.
 
-🔗 Project Overview
+## Project Overview
 
 Task: Automatic text summarization
 
@@ -16,14 +16,14 @@ Framework: TensorFlow / Keras
 
 Goal: Showcase NLP basics, data preprocessing, and deep learning pipelines for summarization.
 
-🗂️ Data Source
+## Data Source
 
 We used the arXiv metadata snapshot
  dataset:
 
 Format: JSON, contains metadata of ~1.7 million papers
 
-Key columns used:
+## Key columns used:
 
 abstract → Input to the model
 
@@ -31,11 +31,11 @@ title → Target for the model
 
 For this project, we limited to first 100,000 records for faster training.
 
-⚠️ Note: The dataset JSON file is too large for GitHub. Download it from the Kaggle link above.
+## Note: The dataset JSON file is too large for GitHub. Download it from the Kaggle link above.
 
-🧹 Data Preprocessing
+## Data Preprocessing
 
-Cleaning text:
+## Cleaning text:
 
 Removed HTML tags using BeautifulSoup
 
@@ -47,15 +47,15 @@ Kept words with length > 2
 
 Expanded contractions (optional)
 
-Target preparation:
+## Target preparation:
 
 Added special tokens sos (start of sequence) and eos (end of sequence) to titles
 
-Splitting data:
+## Splitting data:
 
 Training/Test split: 80/20
 
-Tokenization & padding:
+## Tokenization & padding:
 
 Input abstracts and target titles were converted to sequences of integers
 
@@ -65,7 +65,8 @@ Abstracts: 300 words (MAX_INPUT_LEN)
 
 Titles: 20 words (MAX_TARGET_LEN)
 
-💾 Files Generated
+
+## Files Generated
 ✅ Tokenizer Pickle Files
 
 These allow transforming raw text into integer sequences consistently:
@@ -78,7 +79,8 @@ tr_tokenizer.pkl → Target title tokenizer
 
 arxiv_summarizer.keras → Trained Seq2Seq model with attention, ready for inference
 
-🏗 Model Architecture
+
+ ## Model Architecture
 
 Encoder: 3-layer stacked LSTM, latent dimension = 128
 
@@ -91,7 +93,8 @@ Output Layer: Dense with softmax over target vocabulary
 Loss Function: Sparse Categorical Crossentropy
 Optimizer: RMSprop
 
-📈 Training
+
+## Training
 
 Epochs: 5 (for demonstration; can increase for better results)
 
@@ -107,9 +110,9 @@ val_loss: 2.32
 val_accuracy: 0.66
 
 
-⚠️ With more epochs and GPU support, you can achieve higher accuracy and lower loss.
+ ## With more epochs and GPU support, you can achieve higher accuracy and lower loss.
 
-🧪 Evaluation
+## Evaluation
 
 After training, the model can be evaluated with:
 
@@ -119,7 +122,7 @@ ROUGE score → Measures recall-oriented overlap
 
 Human-readable examples: Generate predicted titles for test abstracts to qualitatively assess summarization.
 
-Example Inference:
+## Example Inference:
 
 Abstract:
 "We propose a novel transformer-based model for sequence-to-sequence tasks..."
@@ -127,34 +130,33 @@ Abstract:
 Predicted Title:
 "Novel Transformer Model for Seq2Seq Tasks"
 
-🛠 How to Run
+## How to Run
 
-Clone repo:
+## Clone repo:
 
 git clone https://github.com/uma-1510/Text_summarizer.git
 cd Text_summarizer
 
-
-Install dependencies:
+## Install dependencies:
 
 pip install -r requirements.txt
 
 
 Download ArXiv JSON dataset and place it in project folder.
 
-Run training script:
+## Run training script:
 
 python text_summarizer_arxiv.py
 
 
-For inference:
+## For inference:
 
 from text_summarizer_arxiv import decode_sequence, in_tokenizer, MAX_INPUT_LEN
 seq = in_tokenizer.texts_to_sequences(["Enter abstract here"])
 seq = pad_sequences(seq, maxlen=MAX_INPUT_LEN, padding="post")
 print(decode_sequence(seq))
 
-⚡ Next Steps / Improvements
+## Next Steps / Improvements
 
 Train with full 500k+ dataset for better generalization
 
@@ -164,7 +166,7 @@ Deploy with Flask + HTML for a user interface
 
 Add ROUGE/BLEU evaluation pipeline
 
-📦 Folder Structure
+## Folder Structure
 Text_summarizer/
 │
 ├─ arxiv-metadata-oai-snapshot.json  # ArXiv dataset (not on GitHub)
@@ -175,7 +177,7 @@ Text_summarizer/
 ├─ requirements.txt                  # Python dependencies
 └─ README.md                         # This file
 
-🔑 Key Learning Outcomes
+## Key Learning Outcomes
 
 Understand Seq2Seq architecture for NLP
 
