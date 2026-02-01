@@ -25,3 +25,10 @@ Thumbs.db
 .pkl
 .json
 
+
+# Large files
+arxiv-metadata-oai-snapshot.json
+s2s/
+*.h5
+*.keras
+*.data-*
