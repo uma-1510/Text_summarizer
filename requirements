@@ -1,2 +1,7 @@
 lxml
 beautiful soup
+tensorflow
+keras
+pandas
+nltk
+scikit-learn
