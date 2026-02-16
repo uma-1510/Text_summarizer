@@ -166,17 +166,6 @@ Deploy with Flask + HTML for a user interface
 
 Add ROUGE/BLEU evaluation pipeline
 
-## Folder Structure
-Text_summarizer/
-│
-├─ arxiv-metadata-oai-snapshot.json  # ArXiv dataset (not on GitHub)
-├─ text_summarizer_arxiv.py          # Main Seq2Seq training + inference
-├─ arxiv_summarizer.keras            # Saved trained model
-├─ in_tokenizer.pkl                  # Input tokenizer
-├─ tr_tokenizer.pkl                  # Target tokenizer
-├─ requirements.txt                  # Python dependencies
-└─ README.md                         # This file
-
 ## Key Learning Outcomes
 
 Understand Seq2Seq architecture for NLP
